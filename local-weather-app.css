@@ -1,0 +1,11 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    text-align: center;
+    color: white;
+    height: 100vh;
+    background: linear-gradient(90deg, #C33764, #1D2671);
+}
