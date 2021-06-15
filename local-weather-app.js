@@ -18,8 +18,9 @@
     function handleWeatherData(data) {
         console.log(data);
         $("#location").text(data.name);
-        $("#temperature").text(Math.round(data.main.temp) + "\u2103");
+        $("#temperature").text(Math.round(data.main.temp));
         $("#description").text(data.weather[0].main);
         $("#image").attr("src", data.weather[0].icon);
+        $(".card").show("slow");
     }
 })();
