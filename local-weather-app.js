@@ -1,18 +1,23 @@
 (function () {
     let temp = 0;
 
-    $(document).ready(function() {
+    let weatherIcons = {
+        Drizzle: "bi bi-cloud-drizzle",
+        Thunderstorm: "bi bi-cloud-lightning",
+        Rainy: "bi bi-cloud-rain",
+        Snowy: "bi bi-cloud-snow",
+        Cloudy: "bi bi-clouds",
+        Clear: "bi-sun",
+        Windy: "bi bi-wind"
+    }
+
+    $(document).ready(function () {
         $("#fahrenheit").click(changeCelsiusToFahrenheit);
         $("#celsius").click(changeFahrenheitToCelsius);
     });
 
     function success(pos) {
         let crd = pos.coords;
-
-        console.log('Your current position is:');
-        console.log(`Latitude : ${crd.latitude}`);
-        console.log(`Longitude: ${crd.longitude}`);
-        console.log(`More or less ${crd.accuracy} meters.`);
         getLocalWeather(crd.latitude, crd.longitude);
     }
 
@@ -23,32 +28,16 @@
     }
 
     function handleWeatherData(data) {
-        console.log(data);
         temp = Math.round(data.main.temp * 10) / 10;
         $("#location").text(data.name);
         $("#temperature").text(temp + "\u00B0C");
         $("#description").text(data.weather[0].main);
-        // $("#weather-icon").attr("src", data.weather[0].icon);
         $(".card").show("slow");
         weatherIcon();
 
         function weatherIcon() {
-            if(data.weather[0].main == "Drizzle") {
-                $("#weather-icon").attr("class", "bi bi-cloud-drizzle");
-            } else if(data.weather[0].main == "Thunderstorm") {
-                $("#weather-icon").attr("class", "bi bi-cloud-lightning");
-            } else if(data.weather[0].main == "Rainy") {
-                $("#weather-icon").attr("class", "bi bi-cloud-rain");
-            } else if(data.weather[0].main == "Snowy") {
-                $("#weather-icon").attr("class", "bi bi-cloud-snow");
-            } else if(data.weather[0].main == "Cloudy") {
-                $("#weather-icon").attr("class", "bi bi-clouds");
-            } else if(data.weather[0].main == "Clear") {
-                $("#weather-icon").attr("class", "bi-sun");
-            } else if(data.weather[0].main == "Windy") {
-                $("#weather-icon").attr("class", "bi bi-wind");
-            } else {
-                $("#weather-icon").attr("class", "bi bi-emoji-dizzy");
+            if (weatherIcons[data.weather[0].main]) {
+                $("#weather-icon").attr("class", weatherIcons[data.weather[0].main]);
             }
         }
     }
