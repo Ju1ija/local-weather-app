@@ -4,11 +4,11 @@
     let weatherIcons = {
         Drizzle: "bi bi-cloud-drizzle",
         Thunderstorm: "bi bi-cloud-lightning",
-        Rainy: "bi bi-cloud-rain",
-        Snowy: "bi bi-cloud-snow",
-        Cloudy: "bi bi-clouds",
-        Clear: "bi-sun",
-        Windy: "bi bi-wind"
+        Rain: "bi bi-cloud-rain",
+        Snow: "bi bi-cloud-snow",
+        Clouds: "bi bi-clouds", //works
+        Clear: "bi-sun", //works
+        Wind: "bi bi-wind"
     }
 
     $(document).ready(function () {
