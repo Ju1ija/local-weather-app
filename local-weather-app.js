@@ -6,8 +6,8 @@
         Thunderstorm: "bi bi-cloud-lightning",
         Rain: "bi bi-cloud-rain",
         Snow: "bi bi-cloud-snow",
-        Clouds: "bi bi-clouds", //works
-        Clear: "bi-sun", //works
+        Clouds: "bi bi-clouds",
+        Clear: "bi-sun",
         Wind: "bi bi-wind"
     }
 
@@ -16,8 +16,8 @@
         $("#celsius").click(changeFahrenheitToCelsius);
     });
 
-    function success(pos) {
-        let crd = pos.coords;
+    function success(position) {
+        let crd = position.coords;
         getLocalWeather(crd.latitude, crd.longitude);
     }
 
