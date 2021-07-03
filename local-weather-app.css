@@ -1,76 +1,65 @@
-* {
-    font-family: "Lucida Console", monospace;
-}
-
 body {
-    text-align: center;
-    color: white;
-    height: 100vh;
-    background: linear-gradient(90deg,#02AABD, #00CDAC);
+  font-family: "Lucida Console", monospace;
+  text-align: center;
+  color: white;
+  height: 100vh;
+  background: linear-gradient(90deg, #02AABD, #00CDAC);
 }
 
 .display-1 {
-    margin-top: 150px;
-    margin-bottom: 80px;
-    font-weight: bold;
+  margin: 65px 10px;
+  font-weight: bold;
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+.weather-description {
+  font-size: 1.5rem;
 }
 
 .card {
-    display: none;
-    border-radius: 20px;
-    overflow: hidden;
-    border: none;
+  display: none;
+  border-radius: 20px;
+  overflow: hidden;
+  border: none;
 }
 
 .card-footer {
-    background-color: #1B1B1E;
-    color: white;
+  background-color: #1B1B1E;
+  color: white;
 }
 
 .btn-group {
-    width: 20rem;
-    margin: 20px 0;
+  width: 140px;
+  margin-bottom: 15px;
 }
 
 .btn-primary {
-    background-color: #02AABD;
-    border: none;
-    font-size: 3rem;
+  background-color: #02AABD;
+  border: none;
+  font-size: 1.5rem;
 }
 
 .btn-primary:hover, .btn-check:active+.btn-primary, .btn-check:checked+.btn-primary {
-    background-color: #017F8D;
+  background-color: #017F8D;
 }
 
 #weather-icon {
-    color: #1B1B1E;
-    font-size: 13rem;
+  color: #1B1B1E;
+  font-size: 5rem;
 }
 
-@media (min-width: 992px) {
-    .display-1 {
-        font-size: 3rem;
-    }
-    
-    #weather-icon {
-        font-size: 5rem;
-    }
-    
-    .display-3 {
-        font-size: 1.5em;
-    }
-
-    .display-6 {
-        font-size: 1rem;
-    }
-
-    .btn-group {
-        width: 8rem;
-        margin: 0;
-    }
-
-    .btn-primary {
-        font-size: 1rem;
-        margin-bottom: 10px;
-    }
-} 
+@media only screen and (min-width: 992px) {
+  .display-1 {
+    font-size: 3.5rem;
+    margin-top: 100px;
+  }
+  .btn-group {
+    margin-bottom: 10px;
+  }
+  .btn-primary {
+    font-size: 1rem;
+  }
+}
