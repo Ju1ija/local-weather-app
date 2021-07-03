@@ -11,6 +11,11 @@ body {
   font-weight: bold;
 }
 
+.spinner-border {
+  width: 65px;
+  height: 65px;
+}
+
 p {
   margin-bottom: 10px;
 }

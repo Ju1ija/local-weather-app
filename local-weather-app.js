@@ -22,6 +22,7 @@
     $("#temperature").text(temp + "\u00B0C");
     $("#description").text(data.weather[0].main);
     $(".card").show("slow");
+    $(".spinner-border").hide();
     if (weatherIcons[data.weather[0].main]) {
       $("#weather-icon").attr("class", weatherIcons[data.weather[0].main]);
     }
